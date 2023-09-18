@@ -1,4 +1,5 @@
 import Button from "../Components/button";
+import { statistics } from "../constants";
 import { arrowRight } from "../assets/icons";
 const Hero = () => {
   return (
@@ -16,6 +17,16 @@ const Hero = () => {
 <span>Spectacles And Sunglasses</span></h1>
 <p> Discover stylish arrivals ,quality and wide range of designs according to your face shape. </p>
 <Button label="Show Now" iconUrl={arrowRight} Color="black"/>
+<div className="flex justify-start items-start flex-wrap w-full mt-20 gap-16 ">
+  {statistics.map((stat)=>(
+   <div key={stat.label}>
+    <p>{stat.value}</p>
+    <p>{stat.label}</p>
+    </div>
+
+
+  ))}
+</div>
       </div> 
     </section>
   )
